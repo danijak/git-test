@@ -1,0 +1,31 @@
+# Introduce your self to GIT, make sure you use an email associated with your GitHub account.
+git config --global user.name "John Doe"
+git config --global user.email johndoe@example.com
+
+#Switch pecan to your fork
+
+git remote set-url origin https://github.com/<your username>/pecan.git
+
+# Setup pecan to be able to fetch from the master
+
+git remote add upstream https://github.com/PecanProject/pecan.git
+
+# Update your master (both locally and on GitHub)
+
+git fetch upstream
+git checkout master
+git merge upstream/master
+git push
+
+# Create a branch to do your work.
+# A good practice is to call the branch in the form of GH- followed by the title of the issue.
+# This makes it easier to find out the issue you are trying to solve and helps us to understand 
+# what is done in the branch. Calling a branch my-work is confusing. 
+# Names of branch can not have a space, and should be replaced with a hyphen.
+
+git checkout -b GH-issuenumber-title-of-issue
+
+# Push your changes up to GitHub.
+# If this is the first time pushing to GitHub you will need to extended command, other wise you can simply do a git push.
+
+git push -u origin GH-issuenumber-title-of-issue
